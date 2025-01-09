@@ -1,73 +1,53 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
   margin: 0;
   padding: 0;
-  background-color: #f0f8ff;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   flex-direction: column;
+  align-items: center;
 }
 
 .banner {
-  width: 200%; /* Makes the banner take full width */
-  max-width: 400px; /* Increases the max width to 800px */
-  text-align: center;
-  background-color: #004080;
+  background-color: #003366;
   color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
   font-size: 24px;
   font-weight: bold;
-  padding: 15px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  border-radius: 5px;
 }
 
-input, button {
-  display: block;
-  width: 200%;
+.form-container {
+  margin-top: 20px;
+  width: 100%;
   max-width: 400px;
-  margin: 10px auto;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 8px;
 }
 
-button {
-  background-color: #00bfff;
+form input, form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #007bff;
   color: white;
-  font-weight: bold;
   border: none;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0099cc;
+form button:hover {
+  background-color: #0056b3;
 }
 
-.back-btn {
-  background-color: #ffa500;
-}
-
-.back-btn:hover {
-  background-color: #cc8400;
-}
-
-ul {
-  max-width: 400px;
-  margin: 0 auto 20px;
-  padding: 0;
-  list-style: none;
-}
-
-ul li {
-  margin: 5px 0;
-}
-
-p {
-  max-width: 400px;
-  margin: 10px auto;
-  text-align: left;
+.hidden {
+  display: none;
 }
