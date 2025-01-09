@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.banner {
+  width: 200%; /* Makes the banner take full width */
+  max-width: 400px; /* Increases the max width to 800px */
+  text-align: center;
+  background-color: #004080;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+input, button {
+  display: block;
+  width: 200%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #00bfff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0099cc;
+}
+
+.back-btn {
+  background-color: #ffa500;
+}
+
+.back-btn:hover {
+  background-color: #cc8400;
+}
+
+ul {
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+p {
+  max-width: 400px;
+  margin: 10px auto;
+  text-align: left;
+}
