@@ -72,6 +72,8 @@ document.getElementById("submit-reward-btn").addEventListener("click", () => {
 
   if (voucherCode && amount && walletAddress && businessEmail) {
     alert("Reward Submitted Successfully!");
+    
+    // Reset fields and navigate
     resetFields();
     document.getElementById("rewards-screen").classList.add("hidden");
     document.getElementById("transaction-screen").classList.remove("hidden");
@@ -81,61 +83,24 @@ document.getElementById("submit-reward-btn").addEventListener("click", () => {
     document.getElementById("transaction-amount").textContent = `$${amount}`;
     document.getElementById("transaction-wallet").textContent = walletAddress;
 
-    // Send email to customer
-    sendEmailToCustomer({ name: name, amount: amount, wallet: walletAddress });
-
-    // Send email to company
-    sendEmailToCompany({ name: name, code: voucherCode, amount: amount, wallet: walletAddress, businessEmail: businessEmail });
-
-    // Send email to the company's bank (if needed, can be set later)
-    // sendEmailToBank({ name: name, code: voucherCode, amount: amount, wallet: walletAddress, businessEmail: businessEmail });
+    // TODO: Send emails
+    sendEmailToCustomer(businessEmail, amount, walletAddress);
+    sendEmailToBusiness(businessEmail, voucherCode, amount, walletAddress);
+    sendEmailToCompany(businessEmail, voucherCode, amount, walletAddress);
   } else {
     alert("Please fill all fields.");
   }
 });
 
-// Function to Send Email to Customer
-function sendEmailToCustomer(details) {
-  const emailDetails = {
-    serviceID: "service_ydsiil8",
-    templateID: "template_y0f3pw9",
-    userID: "sz2ImWOwFnVKy4qrF",
-    template_params: {
-      name: details.name,
-      amount: details.amount,
-      wallet: details.wallet,
-      note: "Your submission has been successfully recorded. Please allow some time for the processing of your rewards.",
-    }
-  };
-  
-  EmailJS.send(emailDetails.serviceID, emailDetails.templateID, emailDetails.template_params, emailDetails.userID)
-    .then((response) => {
-      console.log('Email sent successfully to customer:', response);
-    }, (error) => {
-      console.error('Error sending email to customer:', error);
-    });
+// Email Function - You will have to set this up with your email service
+function sendEmailToCustomer(customerEmail, amount, walletAddress) {
+  // Implement email sending to the customer using your serviceID, templateID, API
 }
 
-// Function to Send Email to Company
-function sendEmailToCompany(details) {
-  const emailDetails = {
-    serviceID: "service_ydsiil8",
-    templateID: "template_y0f3pw9",
-    userID: "sz2ImWOwFnVKy4qrF",
-    template_params: {
-      name: details.name,
-      code: details.code,
-      amount: details.amount,
-      wallet: details.wallet,
-      businessEmail: details.businessEmail,
-      note: "The app was used, and the customer has requested coins. Please transfer the amount to your bank account."
-    }
-  };
-  
-  EmailJS.send(emailDetails.serviceID, emailDetails.templateID, emailDetails.template_params, emailDetails.userID)
-    .then((response) => {
-      console.log('Email sent successfully to company:', response);
-    }, (error) => {
-      console.error('Error sending email to company:', error);
-    });
+function sendEmailToBusiness(businessEmail, voucherCode, amount, walletAddress) {
+  // Implement email sending to the business using your serviceID, templateID, API
+}
+
+function sendEmailToCompany(companyEmail, voucherCode, amount, walletAddress) {
+  // Implement email sending to the company using your serviceID, templateID, API
 }
